@@ -1,119 +1,30 @@
 <div class="root">
-	<dice-sides-grid :sides='state.NumSides' :rows='state.NumRows'></dice-sides-grid>
-	<div class="stat-score-block-row">
-		<div class="stat-score-block" vg-html='"Total Rolls:"'>
-			<div class="stat-score-block-data" vg-html='fmt.Sprint(*data.TotalRollCount)'></div>
-		</div>
-		<div class="stat-score-block" vg-html='"Min # Rolls: "'>
-			<div class="stat-score-block-data" vg-html='fmt.Sprint(state.DieBalanceComputationValues.DieConstants.MinNumberOfRolls)'></div>
-		</div>
-		<div class="stat-score-block" vg-if='!state.IsMinNumRollsMet' vg-html='"Balance Threshold: "'>
-			<div class="stat-score-block-data" vg-if='!state.IsMinNumRollsMet' vg-html='fmt.Sprint("Min # Rolls Not Met")'></div>
-		</div>
-		<div class="stat-score-block" vg-if='state.IsMinNumRollsMet' vg-html='"Balance Threshold: "'>
-			<div class="stat-score-block-data" vg-if='state.IsMinNumRollsMet' vg-html='fmt.Sprintf("%.2f", state.DieBalanceComputationValues.BalanceThreshold)'></div>
-		</div>
-		<div class="stat-score-block" vg-if='!state.IsMinNumRollsMet' vg-html='"Expected Rolls/Side: "'>
-			<div class="stat-score-block-data" vg-if='!state.IsMinNumRollsMet' vg-html='fmt.Sprint("Min # Rolls Not Met")'></div>
-		</div>
-		<div class="stat-score-block" vg-if='state.IsMinNumRollsMet' vg-html='"Expected Rolls/Side: "'>
-			<div class="stat-score-block-data" vg-if='state.IsMinNumRollsMet' vg-html='fmt.Sprintf("%.2f", state.DieBalanceComputationValues.ExpectedRollsPerSide)'></div>
-		</div>
-		<div class="stat-score-block" vg-if='!state.IsMinNumRollsMet' vg-html='"Sum Squared Error: "'>
-			<div class="stat-score-block-data" vg-if='!state.IsMinNumRollsMet' vg-html='fmt.Sprint("Min # Rolls Not Met")'></div>
-		</div>
-		<div class="stat-score-block" vg-if='state.IsMinNumRollsMet' vg-html='"Sum Squared Error: "'>
-			<div class="stat-score-block-data" vg-if='state.IsMinNumRollsMet' vg-html='fmt.Sprintf("%.2f", state.DieBalanceComputationValues.SumSquaredError)'></div>
-		</div>
-		<div class="stat-score-block" vg-if='!state.IsMinNumRollsMet' vg-html='"Balanced: "'>
-			<div class="stat-score-block-data" vg-if='!state.IsMinNumRollsMet' vg-html='fmt.Sprint("Min # Rolls Not Met")'></div>
-		</div>
-		<div class="stat-score-block" vg-if='state.IsMinNumRollsMet' vg-html='"Balanced: "'>
-			<div class="stat-score-block-data" vg-if='state.IsMinNumRollsMet' vg-html='fmt.Sprint(state.DieBalanceComputationValues.IsBalanced)'></div>
-		</div>
-	</div>
-	<div vg-for='i := 0; i < 15; i++' class="firefly"></div>
+    <h1 vg-html='data.Message'></h1>
+	<div class="lines">
+       <div class="line"></div>
+       <div class="line"></div>
+       <div class="line"></div>
+     </div>
 </div>
 
 <style>
-	div.root {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		background-size: cover;
-		position: absolute;
-		display: grid;
-		grid-template-rows: 80% 1fr;
-		place-items: center;
-	}
-
-	div.root:before {
-		content: close-quote;
-		background: inherit;
-		position: absolute;
-		left: -10px;
-		right: -10px;
-		top: -10px;
-		bottom: -10px;
-		box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.1);
-		filter: blur(1px);
-	}
-
-	.stat-score-block {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		background: 50% transparent url(https://www.dndbeyond.com/Content/Skins/Waterdeep/images/character-sheet/content-frames/ac.svg) no-repeat;
-		background-size: contain;
-		text-align: center;
-		color: #838383;
-		font-size: large;
-		line-height: 1;
-		filter: drop-shadow(1px 2px 2px black);
-	}
-
-	.stat-score-block-data {
-		font-weight: 700;
-		font-size: 130%;
-		letter-spacing: -1px;
-		color: black;
-	}
-
-	.stat-score-block-row {
-		width: 100%;
-		height: 100%;
-		display: grid;
-		justify-content: space-around;
-		grid-row-start: 2;
-		grid-row-end: 3;
-		grid-template-rows: 1fr;
-		grid-template-columns: repeat(6, 1fr);
-	}
-
-
-
+.root {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 </style>
 
 <script type="application/x-go">
 	type RootData struct {
-		NumSides             int `default:"20"`
-		NumRows              int `default:"5"`
-		TotalRollCount       *int `default:"0"`
-		MinNumberOfRolls 	 int
-		IsMinNumRollsMet 	 bool `default:"false"`
-		BalanceThreshold     float64 `default:"0.0"`   // Threshold for the SumSquaredError.
-		ExpectedRollsPerSide float64 `default:"0.0"`   // `TotalRollCount/NumberOfSides`
-		SumSquaredError      float64 `default:"0.0"`   // Total of all options SquaredError different from expected roll count. aka 'SSE'
-		IsBalanced           bool    `default:"false"` // SSE <= BalanceThreshold
+		Message    string `default:"Coming Soon To a Project Near You..."`
 	}
 
 	func (comp *Root) NewData(props vugu.Props) (interface{}, error) {
 
 		ret := &RootData{
-			TotalRollCount: &state.TotalRollCount,
+			Message: "Coming Soon To a Project Near You...",
 		}
 		return ret, nil
 	}
