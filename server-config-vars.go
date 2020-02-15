@@ -13,9 +13,11 @@ const (
 <title>dev42 - {{.Request.URL.Path}}</title>
 {{end}}
 <meta charset="utf-8"/>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300i&display=swap" rel="stylesheet">
 <link rel="apple-touch-icon" sizes="180x180" href="static/icons/root/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="static/icons/root/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="static/icons/root/favicon-16x16.png">
+	<link rel="image" type="image/png" href="static/icons/spinning-hex-logo.webp">
 <link rel="manifest" href="static/icons/root/site.webmanifest">
 <link rel="mask-icon" href="static/icons/root/safari-pinned-tab.svg" color="#054306">
 {{if .MetaTags}}{{range $k, $v := .MetaTags}}
@@ -32,7 +34,7 @@ const (
 <body>
 <div id="root_mount_parent">
 {{if .ServerRenderedOutput}}{{.ServerRenderedOutput}}{{else}}
-<img style="position: absolute; top: 50%; left: 50%;" src="https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif">
+<img class="spinner" style="position: absolute; top: 50%; left: 50%;">
 {{end}}
 </div>
 <script>
@@ -55,7 +57,7 @@ if (wasmSupported) {
 </body>
 </html>
 `
-	title    = "Dice Fairness Analyzer - dev42"
+	title    = "dev42 - Magrathea - Brandon Hunter"
 	icons    = "static/icons/root/*"
 	cssFonts = "static/css/fonts.css"
 	cssIndex = "static/css/index.css"
