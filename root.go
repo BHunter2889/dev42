@@ -28,12 +28,16 @@ func (comp *Root) BuildVDOM(dataI interface{}) (vdom *vugu.VGNode, css *vugu.VGN
 	event := vugu.DOMEventStub
 	_ = event
 	css = &vugu.VGNode{Type: vugu.VGNodeType(3), Data: "style", DataAtom: vugu.VGAtom(458501), Namespace: "", Attr: []vugu.VGAttribute(nil)}
-	css.AppendChild(&vugu.VGNode{Type: vugu.VGNodeType(1), Data: "\n.root {\n    height: 100vh;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n", DataAtom: vugu.VGAtom(0), Namespace: "", Attr: []vugu.VGAttribute(nil)})
+	css.AppendChild(&vugu.VGNode{Type: vugu.VGNodeType(1), Data: "\n.bg-logo {\n    position: fixed;\n    height: 100%;\n    width: 100%;\n    background-image: url(static/images/dev42alt_logo3.svg);\n    background-size: 40vmax;\n    background-repeat: no-repeat;\n    background-position: center;\n    opacity: 0.65;\n    z-index: -1;\n}\n\n.root {\n    height: 100vh;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n", DataAtom: vugu.VGAtom(0), Namespace: "", Attr: []vugu.VGAttribute(nil)})
 	var n *vugu.VGNode
 	n = &vugu.VGNode{Type: vugu.VGNodeType(3), Data: "div", DataAtom: vugu.VGAtom(92931), Namespace: "", Attr: []vugu.VGAttribute{vugu.VGAttribute{Namespace: "", Key: "class", Val: "root"}}}
 	vdom = n
 	{
 		parent := n
+		n = &vugu.VGNode{Type: vugu.VGNodeType(1), Data: "\n    ", DataAtom: vugu.VGAtom(0), Namespace: "", Attr: []vugu.VGAttribute(nil)}
+		parent.AppendChild(n)
+		n = &vugu.VGNode{Type: vugu.VGNodeType(3), Data: "div", DataAtom: vugu.VGAtom(92931), Namespace: "", Attr: []vugu.VGAttribute{vugu.VGAttribute{Namespace: "", Key: "class", Val: "bg-logo"}}}
+		parent.AppendChild(n)
 		n = &vugu.VGNode{Type: vugu.VGNodeType(1), Data: "\n    ", DataAtom: vugu.VGAtom(0), Namespace: "", Attr: []vugu.VGAttribute(nil)}
 		parent.AppendChild(n)
 		n = &vugu.VGNode{Type: vugu.VGNodeType(3), Data: "h1", DataAtom: vugu.VGAtom(89090), Namespace: "", Attr: []vugu.VGAttribute(nil)}
