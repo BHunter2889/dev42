@@ -75,4 +75,5 @@ if (wasmSupported) {
 	cssFonts = "static/css/fonts.css"
 	cssIndex = "static/css/index.css"
 	cssLoader = "static/css/loader.css"
+	cssSocial = "static/css/social-icons.css"
 )

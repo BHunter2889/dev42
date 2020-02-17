@@ -20,7 +20,7 @@ func main() {
 	simplehttp.DefaultStaticData["Title"] = title
 
 	// import CSS / fonts
-	simplehttp.DefaultStaticData["CSSFiles"] = []string{cssIndex, cssLoader}
+	simplehttp.DefaultStaticData["CSSFiles"] = []string{cssIndex, cssLoader, cssSocial}
 
 	// create handler and serve
 	h := simplehttp.New(wd, true)

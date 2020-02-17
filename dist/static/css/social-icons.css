@@ -1,0 +1,131 @@
+.social {
+    top: 75vh;
+    position: absolute;
+    z-index: 100;
+}
+
+.social a {
+    margin: 0.6rem;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    height: 15vw;
+    width: 15vw;
+    max-width: 8rem;
+    max-height: 8rem;
+    display: inline-block;
+    filter: drop-shadow(4px 6px 2px #202125);
+}
+.social a:hover {
+    cursor: pointer;
+}
+.social a svg {
+    height: 100%;
+    width: 100%;
+    fill: white;
+}
+
+.social .badges a {
+    border-radius: 1rem;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.rounded {
+    border-radius: 20%;
+}
+
+.generic {
+    background: #383940;
+}
+.generic:focus, .generic:hover {
+    background: #202125;
+}
+
+.github {
+    background: #383940;
+}
+.github:focus, .github:hover {
+    background: #202125;
+}
+
+.linkedin {
+    background: #007bb6;
+}
+.linkedin:focus, .linkedin:hover {
+    background: #005983;
+}
+
+.medium {
+    background: #383940;
+}
+.medium:focus, .medium:hover {
+    background: #202125;
+}
+
+.twitter {
+    background: #55acee;
+}
+.twitter:focus, .twitter:hover {
+    background: #2795e9;
+}
+
+.no-bg a {
+    background-color: transparent !important;
+    margin: 0;
+}
+
+.no-bg .generic svg {
+    fill: #383940;
+}
+.no-bg .generic:focus svg, .no-bg .generic:hover svg {
+    fill: #202125;
+}
+.no-bg .github svg {
+    fill: #383940;
+}
+.no-bg .github:focus svg, .no-bg .github:hover svg {
+    fill: #202125;
+}
+
+.no-bg .linkedin svg {
+    fill: #007bb6;
+}
+.no-bg .linkedin:focus svg, .no-bg .linkedin:hover svg {
+    fill: #005983;
+}
+.no-bg .medium svg {
+    fill: #383940;
+}
+.no-bg .medium:focus svg, .no-bg .medium:hover svg {
+    fill: #202125;
+}
+.no-bg .twitter svg {
+    fill: #55acee;
+}
+.no-bg .twitter:focus svg, .no-bg .twitter:hover svg {
+    fill: #2795e9;
+}
+
+
+body {
+    text-align: center;
+}
+
+p {
+    color: #383940;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+    line-height: 1.6;
+    font-family: Roboto Mono;
+    font-weight: 300;
+}
+p a {
+    text-decoration: none;
+    color: #55acee;
+}
+
+.divider {
+    padding-top: 2rem;
+}

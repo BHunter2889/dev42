@@ -36,6 +36,7 @@ html {
 
 html, body {
     height: 100%;
+    bottom: 3%;
 }
 
 body {
@@ -55,16 +56,14 @@ body {
 }
 
 h1 {
-    /*font-family: 'Lato', sans-serif;*/
     font-family: 'Noto Serif', serif;
     font-size: 2em;
     font-weight: 500;
     font-style: oblique;
     line-height: 58px;
     margin: 0 0 58px;
-    /*text-shadow: 1px 1px 2px black;*/
     position: absolute;
-    top: 20%;
+    top: 15vh;
 }
 
 .thickness {

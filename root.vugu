@@ -1,6 +1,7 @@
 <div class="root">
     <div class="bg-logo"></div>
     <h1 class="thickness" vg-html='data.Message'></h1>
+    <social-bar></social-bar>
 	<div class="lines">
        <div class="line"></div>
        <div class="line"></div>

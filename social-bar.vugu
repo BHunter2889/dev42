@@ -1,0 +1,30 @@
+<div class="social no-bg">
+    <a class="linkedin" href="https://www.linkedin.com/in/brandon-hunter-dev42/">
+        <img src="./static/icons/linkedin-min.svg"></img>
+    </a>
+    <a class="github" href="https://github.com/BHunter2889">
+        <img src="./static/icons/github-min.svg"></img>
+    </a>
+    <a class="medium" href="https://medium.com/@bhunter2889">
+        <img src="./static/icons/medium-min.svg"></img>
+    </a>
+    <a class="twitter" href="https://twitter.com/BHunter28">
+        <img src="./static/icons/twitter-min.svg"></img>
+    </a>
+    <a class="generic" href="mailto:brandon@fourty-two.dev">
+        <img src="./static/icons/email-min.svg"></img>
+    </a>
+</div>
+
+<style>
+
+</style>
+
+<script type="application/x-go">
+type SocialBarData struct {}
+
+func (comp *SocialBar) NewData(props vugu.Props) (interface{}, error) {
+    ret := &SocialBarData{}
+    return ret, nil
+}
+</script>
