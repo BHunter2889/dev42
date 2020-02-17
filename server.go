@@ -34,7 +34,7 @@ func main() {
 	simplehttp.DefaultStaticData["Title"] = title
 
 	// import CSS / fonts
-	simplehttp.DefaultStaticData["CSSFiles"] = []string{cssIndex}
+	simplehttp.DefaultStaticData["CSSFiles"] = []string{cssIndex, cssLoader}
 
 	log.Printf("Starting HTTP Server at %q", *httpl)
 	h := simplehttp.New(wd, *dev)

@@ -40,7 +40,7 @@ func (comp *Root) BuildVDOM(dataI interface{}) (vdom *vugu.VGNode, css *vugu.VGN
 		parent.AppendChild(n)
 		n = &vugu.VGNode{Type: vugu.VGNodeType(1), Data: "\n    ", DataAtom: vugu.VGAtom(0), Namespace: "", Attr: []vugu.VGAttribute(nil)}
 		parent.AppendChild(n)
-		n = &vugu.VGNode{Type: vugu.VGNodeType(3), Data: "h1", DataAtom: vugu.VGAtom(89090), Namespace: "", Attr: []vugu.VGAttribute(nil)}
+		n = &vugu.VGNode{Type: vugu.VGNodeType(3), Data: "h1", DataAtom: vugu.VGAtom(89090), Namespace: "", Attr: []vugu.VGAttribute{vugu.VGAttribute{Namespace: "", Key: "class", Val: "thickness"}}}
 		parent.AppendChild(n)
 		n.InnerHTML = fmt.Sprint(data.Message)
 		n = &vugu.VGNode{Type: vugu.VGNodeType(1), Data: "\n\t", DataAtom: vugu.VGAtom(0), Namespace: "", Attr: []vugu.VGAttribute(nil)}

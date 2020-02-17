@@ -14,6 +14,7 @@ const (
 {{end}}
 <meta charset="utf-8"/>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:700i&display=swap" rel="stylesheet">
 <link rel="apple-touch-icon" sizes="180x180" href="static/icons/root/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="static/icons/root/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="static/icons/root/favicon-16x16.png">
@@ -34,7 +35,19 @@ const (
 <body>
 <div id="root_mount_parent">
 {{if .ServerRenderedOutput}}{{.ServerRenderedOutput}}{{else}}
-<img class="spinner" style="position: absolute; top: 50%; left: 50%;">
+<div class="center-wrapper">	
+	<div class="sk-cube-grid">
+  		<div class="sk-cube sk-cube1"></div>
+  		<div class="sk-cube sk-cube2"></div>
+  		<div class="sk-cube sk-cube3"></div>
+  		<div class="sk-cube sk-cube4"></div>
+  		<div class="sk-cube sk-cube5"></div>
+  		<div class="sk-cube sk-cube6"></div>
+  		<div class="sk-cube sk-cube7"></div>
+  		<div class="sk-cube sk-cube8"></div>
+  		<div class="sk-cube sk-cube9"></div>
+	</div>
+</div>	
 {{end}}
 </div>
 <script>
@@ -61,4 +74,5 @@ if (wasmSupported) {
 	icons    = "static/icons/root/*"
 	cssFonts = "static/css/fonts.css"
 	cssIndex = "static/css/index.css"
+	cssLoader = "static/css/loader.css"
 )
